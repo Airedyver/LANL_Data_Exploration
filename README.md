@@ -5,11 +5,11 @@ LANL has open source data with a small explanation here : https://csr.lanl.gov/d
 
 ## Introduction ##
 Because the data set represents over 1 billion points of authentication logs, I did not have the capacity to analyze a complete data set. Because it's time-based I decided to cut the dataset by every 40 lines to get an accurate contextual sample. Code for this will be in the 'Splitting_Auth_txt.ipynb' 
-Next, I reviewed the data in a Scala IDE called Eclipse, if you want to run the Scala IDE you will need a Java Development Kit. https://www.youtube.com/watch?v=WlE7RNdtfwE&t=333s, Frank Kane has a great instructional video that shows you how to download Spark and Scala IDE. I explored both red team and authorization data, within 'Next_Rev_Scala_Data_Exploration.scala'.
+Next, I reviewed the data in a Scala IDE called Eclipse, if you want to run the Scala IDE you will need a Java Development Kit. , Frank Kane has a great instructional video that shows you how to download Spark and Scala IDE https://www.youtube.com/watch?v=WlE7RNdtfwE&t=333s. I explored both red team and authorization data, within 'Next_Rev_Scala_Data_Exploration.scala', you can find this within the 'Data_Exploration' folder.
 
 I originally wanted to join the red team and auth_sample dataframes together but was not able to because red teams information was not unique enough to make into one dataframe. I wanted to use this new data frame and place it into a Machine Learning Algorithm. My attempts can be found in the folder "Failures". Yep, I have a failures file.  
 
-After re-reading the instructions, I noticed that I could make a binary classifcation system through databricks, almost right out of their instructional notebook, with a little bit of tweeking of course. 
+After re-reading the instructions, I noticed that I could make a binary classification system through databricks, almost right out of their instructional notebook, with a little bit of tweeking of course. 
 
 The Auth_Table_Upload.ipynb file is meant for a large data sample, it is not tested, but came from the API section of the databricks documentation. USE AT YOUR OWN RISK, AWS and Databricks may charge you for uploading such a large data set. I'd suggest just sticking with my 'Next Rev Binary Classifier'.ipynb file. In it, there are 3 different types of binary classifiers that were used, all are supervised learning methods. First is Logistic Regression, Second is Decision Tree, third is Random Forest using 10 trees. Using all of these models will show the eventual best model for the data I have. I did also consider a KMeans clustering algorithm, which is an unsupervised learning algorithm, but I preferrred the more hands on approach for the data I have.
 
